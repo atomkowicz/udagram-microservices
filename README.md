@@ -14,7 +14,7 @@ AWS: aws account, s3 bucket, aws rds postgress database, aws eks cluster
 
 ## Config
 
-1. Add file `configmap` with example content
+1. Add file `config/configmap` with example content
 
 ```bash
     AWS_BUCKET=your_aws_bucket_name
@@ -27,17 +27,17 @@ AWS: aws account, s3 bucket, aws rds postgress database, aws eks cluster
     URL=http://localhost:8100 
 ```
 
-2. Add file `dbusername.txt` with content
+2. Add file `config/dbusername.txt` with content
 
 ```bash
     your_user_name
 ```
-3. Add file `dbuserpassword.txt` with content
+3. Add file `config/dbuserpassword.txt` with content
 
 ```bash
     your_user_password
 ```
-4. Add file `credentials` - file with your aws credentials
+4. Add file `config/credentials` - file with your aws credentials
 
 ## Run application
 
@@ -112,12 +112,12 @@ git checkout app-v2
 
 Create docker image:
 ```bash
-docker build -t <image-name>/<image-id> .
+docker build -t <docker_name>/udagram-frontend .
 ```
 Push image to Dockerhub:
 
 ```bash
-docker push <image-name>/<image-id>
+docker push <docker_name>/udagram-frontend
 ```
 
 Create `B` deployment:
@@ -144,7 +144,6 @@ kubectl apply -f deployment/k8s/frontend-deployment.yaml
 ```
 
 Check results:
-
 ```bash
 kubectl get deployments
 kubectl get pods
