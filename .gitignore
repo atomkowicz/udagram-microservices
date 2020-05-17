@@ -1,0 +1,4 @@
+config
+backend/feed/node_modules
+backend/user/node_modules
+frontend/node_modules
